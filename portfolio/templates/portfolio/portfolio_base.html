@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block extra_head %}
+    {{ block.super }} {# Keep content from parent's extra_head #}
+    <link rel="stylesheet" href="{% static 'portfolio/css/portfolio.css' %}">
+{% endblock %}
+
+{% block body_class %}dark-theme{% endblock %}

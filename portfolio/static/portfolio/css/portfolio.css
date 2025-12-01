@@ -46,35 +46,86 @@ body.dark-theme {
     background-color: #2aaf75;
     border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
     animation: blob-animation 10s infinite alternate;
+    overflow: hidden;
+    /* This is the key: it clips the content inside to the blob shape */
+    display: flex;
+    /* To center the image */
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes blob-animation {
     0% {
         border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
     }
+
     50% {
         border-radius: 28% 72% 48% 42% / 72% 28% 42% 56%;
     }
+
     100% {
         border-radius: 72% 28% 42% 56% / 28% 72% 56% 42%;
     }
 }
 
+@keyframes typing {
+
+    from {
+
+        width: 0
+    }
+
+    to {
+
+        width: 25ch;
+        /* 22 characters wide */
+
+    }
+
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: #2aaf75;
+        /* Use theme color for caret */
+    }
+}
+
 .hero-image {
-    position: relative;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
+    width: 100%;
+    /* Fill the blob container */
+    height: 100%;
+    /* Fill the blob container */
     object-fit: cover;
+    /* Cover the area without distortion */
+    /* NO border-radius: 50%; here */
+}
+
+.professional {
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+    display: inline-block;
+    border-right: 1px solid #2aaf75;
+    /* This is the caret */
+    white-space: nowrap;
+    margin: 0;
+    letter-spacing: 2px;
+    animation: typing 3s steps(30, end), blink-caret 0.8s step-end infinite;
 }
 
 .social-links {
     margin-top: 40px;
-    text-align: center;
+    text-align: left;
 }
 
 .social-links a {
-    color: #ffffff;
+    color: #2aaf75;
     margin: 0 15px;
     font-size: 1.5rem;
     text-decoration: none;

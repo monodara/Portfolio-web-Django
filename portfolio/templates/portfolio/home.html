@@ -1,26 +1,28 @@
-{% extends 'blog/base.html' %}
+{% extends 'portfolio/portfolio_base.html' %}
 {% load static %}
 
 {% block extra_head %}
-    <link rel="stylesheet" href="{% static 'portfolio/css/portfolio.css' %}">
+<link rel="stylesheet" href="{% static 'portfolio/css/portfolio.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="container">
     <div class="row hero-section">
         <div class="col-md-6 hero-text">
-            <h1>Hi,<br>I'm <span class="highlight">Yuan</span><br>Web Designer</h1>
-            <a href="{% url 'portfolio:contact' %}" class="btn btn-primary contact-btn">Contact</a>
+            <h1>Hi, I'm <span class="highlight">Yuan</span>. I'm a</h1>
+            <h2 class="professional">Software & AI Developer</h2><br>
+            <a href="{% url 'portfolio:contact' %}" class="btn btn-primary contact-btn">Download My CV</a>
         </div>
         <div class="col-md-6 hero-image-container">
-            <div class="hero-image-blob"></div>
-            <img src="https://via.placeholder.com/400" alt="Yuan" class="hero-image">
+            <div class="hero-image-blob">
+                <img src="{% static 'portfolio/portfolio_images/profile.jpg' %}" alt="Yuan" class="hero-image">
+            </div>
         </div>
     </div>
     <div class="social-links">
-        <a href="#">in</a>
-        <a href="#">Bē</a>
-        <a href="#">gh</a>
+        <a href="https://www.linkedin.com/in/yuan-yuan-lu/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/monodara"><i class="fab fa-github"></i></a>
+        <a href="https://medium.com/@monodara.lu"><i class="fab fa-medium"></i></a>
     </div>
 </div>
 {% endblock %}
