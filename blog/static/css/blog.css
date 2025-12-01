@@ -1,28 +1,15 @@
-.page-header {
-    background-color: #2aaf75;
-    margin-top: 0;
-    margin-bottom: 40px;
-    padding: 20px 20px 20px 40px;
-}
 
-.page-header h1,
-.page-header h1 a,
-.page-header h1 a:visited,
-.page-header h1 a:active {
-    color: #ffffff;
-    font-size: 36pt;
-    text-decoration: none;
-}
 
 h1 {
     font-family: 'Lobster', cursive;
+    color: #ffffff;
 }
 
 h2,
 /* h3, */
 h4 {
     font-family: sans-serif;
-    color: #2aaf75;
+    color: #ffffff;
 }
 
 .preview {
@@ -35,7 +22,7 @@ h4 {
 
 
 .date {
-    color: #828282;
+    color: #cccccc;
 }
 
 .save {
@@ -67,7 +54,7 @@ h4 {
 }
 
 .post h3 {
-    color: #888888;
+    color: #aaaaaa;
     font-size: 16pt;
 }
 
@@ -78,22 +65,22 @@ h4 {
 
 .btn-secondary,
 .btn-secondary:visited {
-    color: #C25100;
+    color: #2aaf75;
     background: none;
-    border-color: #C25100;
+    border-color: #2aaf75;
     margin-left: 15px;
 }
 
 .btn-secondary:hover {
     color: #FFFFFF;
-    background-color: #C25100;
+    background-color: #2aaf75;
 }
 
 pre {
-    background: #f4f4f4;
+    background: #2d2d2d;
     border: 1px solid #ddd;
-    border-left: 3px solid #f36d33;
-    color: #666;
+    border-left: 3px solid #2aaf75; /* Use theme color for accent */
+    color: #cccccc;
     page-break-inside: avoid;
     font-family: monospace;
     font-size: 15px;

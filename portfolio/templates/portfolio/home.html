@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/portfolio.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row hero-section">
+        <div class="col-md-6 hero-text">
+            <h1>Hi,<br>I'm <span class="highlight">Yuan</span><br>Web Designer</h1>
+            <a href="{% url 'portfolio:contact' %}" class="btn btn-primary contact-btn">Contact</a>
+        </div>
+        <div class="col-md-6 hero-image-container">
+            <div class="hero-image-blob"></div>
+            <img src="https://via.placeholder.com/400" alt="Yuan" class="hero-image">
+        </div>
+    </div>
+    <div class="social-links">
+        <a href="#">in</a>
+        <a href="#">Bē</a>
+        <a href="#">gh</a>
+    </div>
+</div>
+{% endblock %}
