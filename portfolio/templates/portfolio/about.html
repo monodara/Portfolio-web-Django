@@ -1,5 +1,156 @@
 {% extends 'portfolio/portfolio_base.html' %}
+{% load static %}
 
 {% block content %}
-    <h2>About Me</h2>
+<div class="profile-section">
+    <div class="skill-tags-left">
+        <span class="skill-tag">Full-Stack</span>
+        <span class="skill-tag">Generative AI</span>
+        <span class="skill-tag">Agents</span>
+        <span class="skill-tag">RAG</span>
+        <span class="skill-tag">Vector Database</span>
+        <span class="skill-tag">MCP</span>
+        <span class="skill-tag">Fine Tuning</span>
+        <span class="skill-tag">Low-Code</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">Django</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">NoSQL</span>
+        <span class="skill-tag">Azure</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Docker</span>
+    </div>
+    <div class="d-flex justify-content-center my-4">
+        <div class="hero-image-blob">
+            <img src="{% static 'portfolio/portfolio_images/profile.jpg' %}" alt="Yuan" class="hero-image">
+        </div>
+    </div>
+    <div class="skill-tags-right">
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">Teamwork</span>
+        <span class="skill-tag">Self-Discipline</span>
+        <span class="skill-tag">Cross-Functional Communication</span>
+        <span class="skill-tag">Challenge Seeking</span>
+        <span class="skill-tag">Fast Learning</span>
+        <span class="skill-tag">Multicultural Background</span>
+        <span class="skill-tag">Adaptability</span>
+        <span class="skill-tag">Time Management</span>
+        <span class="skill-tag">Goal Orientation</span>
+    </div>
+
+</div>
+
+<h2 class="text-center my-4 about-heading">Aspiring AI & Software Developer with a Growth Mindset</h2>
+
+<div class="timeline-container">
+    <div class="timeline-line"></div> <!-- This will be a CSS-drawn vertical line -->
+
+    <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3><i class="fas fa-laptop-code"></i> Applied Artificial Intelligence</h3>
+            <p>09/2025, Online</p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3><i class="fas fa-laptop-code"></i> Finnish</h3>
+            <p>07/2024, Vaasa, Finland</p>
+        </div>
+    </div>
+    <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3><i class="fas fa-laptop-code"></i> Full-Stack Development</h3>
+            <p>01/2024, Helsinki, Finland</p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3><i class="fas fa-graduation-cap"></i> Computer Science</h3>
+            <p>2021, Dublin, Ireland</p>
+        </div>
+    </div>
+    <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3><i class="fas fa-briefcase"></i> Associate Product Manager</h3>
+            <p>2019, Beijing, China</p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3><i class="fas fa-briefcase"></i> UI Designer</h3>
+            <p>2016, Beijing, China</p>
+        </div>
+    </div>
+
+    <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3><i class="fas fa-briefcase"></i> Graphic Designer & Marketer</h3>
+            <p>2012, Beijing, China</p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3><i class="fas fa-graduation-cap"></i> Industrial Design</h3>
+            <p>2008, Beijing, China</p>
+        </div>
+    </div>
+</div>
+
+<div class="my-stories-section container my-5">
+    <h2 class="text-center my-4 about-heading">My Stories</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="story-quote">
+                <i class="fas fa-quote-left quote-icon-left"></i>
+                <p>
+                    I’ve always been someone who embraces change, enjoys challenges, and actively seeks opportunities to
+                    grow — and it’s something I truly practice, not just something I say.
+                </p>
+                <i class="fas fa-quote-right quote-icon-right"></i>
+            </div>
+            <p>
+                Back in high school, my strongest subjects were mathematics, chemistry, history, and languages. Yet when
+                it came time for university, I chose a different path and studied design simply because I wanted to
+                explore a new creative direction.
+            </p>
+            <p>
+                After graduating, I worked for several years as a graphic and UI designer. Being part of software teams
+                exposed me to the engineering side of product development, and I gradually became fascinated by how
+                software is built. That curiosity pushed me to learn programming on my own, and eventually I moved to
+                Ireland to study computer science. There, I focused on software development while also building a solid
+                foundation in data science and cloud computing.
+            </p>
+            <p>
+                Outside of work and study, I’m someone who loves to explore the world. Traveling has become a part of my
+                life—I plan trips almost every year, constantly expanding my personal world map and experiencing
+                different cultures firsthand. These journeys have taught me adaptability, broadened my perspective, and
+                strengthened my ability to connect with people from diverse backgrounds.
+            </p>
+            <p>
+                Today, I’m expanding into AI and machine learning and applying what I learn by building real
+                applications and experimenting with end-to-end projects.
+            </p>
+            <p>
+                My journey reflects who I am: someone who is not afraid to step out of their comfort zone, willing to
+                try new things, and committed to continuous learning and personal growth—both professionally and
+                personally.
+            </p>
+
+        </div>
+    </div>
+</div>
 {% endblock %}

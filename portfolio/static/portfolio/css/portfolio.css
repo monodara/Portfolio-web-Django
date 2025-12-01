@@ -40,18 +40,17 @@ body.dark-theme {
 }
 
 .hero-image-blob {
-    position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     background-color: #2aaf75;
     border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
     animation: blob-animation 10s infinite alternate;
     overflow: hidden;
-    /* This is the key: it clips the content inside to the blob shape */
     display: flex;
-    /* To center the image */
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
+    /* Center horizontally */
 }
 
 @keyframes blob-animation {
@@ -155,4 +154,406 @@ body.dark-theme {
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* === Timeline Container === */
+.timeline-container {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px 0;
+}
+
+/* Vertical Line */
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: #2aaf75;
+    /* Use theme color */
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* === Timeline Items === */
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 20px;
+    /* Reduced horizontal padding */
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* Timeline dots */
+.timeline-dot {
+    position: absolute;
+    top: 25px;
+    /* aligns with titles */
+    width: 16px;
+    height: 16px;
+    background: #2aaf75;
+    /* Use theme color */
+    border-radius: 50%;
+    border: 3px solid #121212;
+    /* Use body background color */
+    box-shadow: 0 0 0 4px #2aaf75;
+    /* Use theme color */
+}
+
+.timeline-item.left .timeline-dot {
+    right: -8px;
+}
+
+.timeline-item.right .timeline-dot {
+    left: -8px;
+}
+
+/* Content box */
+.timeline-content {
+    background: #1e1e1e;
+    /* Dark background */
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: inline-block;
+    max-width: 100%;
+    /* Allow content to take full width of item's content area */
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    /* Light text color */
+}
+
+.timeline-content h3 i {
+    margin-right: 10px;
+    color: #2aaf75;
+    /* Use theme color for icons */
+}
+
+.timeline-content p {
+
+    margin: 8px 0 0 0;
+
+    line-height: 1.5;
+
+    color: #cccccc; /* Lighter text color */
+
+}
+
+
+
+/* === Responsive Design for mobile === */
+
+ @media (max-width: 768px) {
+
+
+
+    .timeline-line {
+
+        left: 20px;
+
+    }
+
+
+
+    .timeline-item {
+
+        width: 100%;
+
+        padding-left: 50px;
+
+        padding-right: 20px;
+
+        text-align: left !important;
+
+    }
+
+
+
+    .timeline-item.left,
+
+    .timeline-item.right {
+
+        left: 0;
+
+    }
+
+
+
+    .timeline-item .timeline-dot {
+
+        left: 12px;
+
+        right: auto;
+
+    }
+
+
+
+    .timeline-content {
+
+        max-width: calc(100% - 50px);
+
+    }
+
+}
+
+
+
+.contact-section {
+
+
+
+    margin-top: 50px;
+
+
+
+}
+
+
+
+
+
+
+
+.contact-item {
+
+
+
+    display: flex;
+
+
+
+    align-items: center;
+
+
+
+    margin-bottom: 20px;
+
+
+
+    background-color: #1e1e1e; /* Dark background for the item */
+
+
+
+    padding: 15px 20px;
+
+
+
+    border-radius: 8px;
+
+
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+
+
+
+}
+
+
+
+
+
+
+
+.contact-item:hover {
+
+
+
+    transform: translateY(-5px); /* Lift effect on hover */
+
+
+
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+
+
+
+}
+
+
+
+
+
+
+
+.contact-icon {
+
+
+
+    font-size: 2rem; /* Slightly larger icon */
+
+
+
+    color: #2aaf75; /* Theme color */
+
+
+
+    margin-right: 20px; /* More space */
+
+
+
+    width: 40px; /* Fixed width for alignment */
+
+
+
+    text-align: center;
+
+
+
+}
+
+
+
+
+
+
+
+.contact-text {
+
+
+
+    font-size: 1.2rem; /* Slightly larger text */
+
+
+
+    color: #ffffff;
+
+
+
+    text-decoration: none;
+
+
+
+}
+
+
+
+
+
+
+
+.contact-text:hover {
+
+
+
+    color: #2aaf75; /* Theme color on hover */
+
+
+
+}
+
+.about-heading {
+    font-size: 1.5rem;
+    /* Make the heading smaller */
+    color: #ffffff;
+    /* Ensure it's visible in dark theme */
+}
+
+/* Profile section and skill tags styles */
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    /* Make it span the full width */
+}
+
+.skill-tags-left,
+.skill-tags-right {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow tags to wrap to the next line */
+    gap: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    /* Keep a defined width for wrapping */
+    height: auto;
+    /* Height will adjust based on content */
+    justify-content: center;
+    /* Center tags within their container */
+    align-items: center;
+    /* Center tags vertically within their container */
+}
+
+.skill-tags-left {
+    right: 50%;
+    margin-right: 200px;
+    /* Adjust distance from image */
+    /* align-items: flex-end; Removed */
+}
+
+.skill-tags-right {
+    left: 50%;
+    margin-left: 200px;
+    /* Adjust distance from image */
+    /* align-items: flex-start; Removed */
+}
+
+.skill-tag {
+    background-color: transparent;
+    color: #2aaf75;
+    padding: 5px 10px;
+    border: 1px solid #2aaf75;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    /* position: absolute; Removed */
+}
+
+/* Remove all nth-child rules for skill tags */
+
+.story-quote {
+    background-color: #1e1e1e;
+    /* Dark background */
+    width: 80%;
+    padding: 50px;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 auto 30px auto;
+    /* Center horizontally and add bottom margin */
+    font-style: italic;
+    color: #cccccc;
+}
+
+.story-quote .quote-icon-left,
+.story-quote .quote-icon-right {
+    position: absolute;
+    font-size: 3rem;
+    color: #2aaf75;
+    /* Theme color */
+    opacity: 0.2;
+}
+
+.story-quote .quote-icon-left {
+    top: 10px;
+    left: 10px;
+}
+
+.story-quote .quote-icon-right {
+    bottom: 10px;
+    right: 10px;
 }

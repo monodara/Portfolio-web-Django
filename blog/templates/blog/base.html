@@ -22,15 +22,28 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'portfolio:about' %}">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'portfolio:skills' %}">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'portfolio:projects' %}">Works</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'blog:post_list' %}">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'portfolio:contact' %}">Contact</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/' %}active{% endif %}"
+                                href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/portfolio/about/' %}active{% endif %}"
+                                href="{% url 'portfolio:about' %}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/portfolio/projects/' %}active{% endif %}"
+                                href="{% url 'portfolio:projects' %}">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path|urlencode == '/blog/'|urlencode %}active{% endif %}"
+                                href="{% url 'blog:post_list' %}">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/portfolio/contact/' %}active{% endif %}"
+                                href="{% url 'portfolio:contact' %}">Contact</a>
+                        </li>
                     </ul>
                 </div>
-
             </nav>
         </div>
     </header>

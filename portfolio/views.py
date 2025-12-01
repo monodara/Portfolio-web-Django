@@ -17,9 +17,6 @@ def download_cv(request):
 def about(request):
     return render(request, 'portfolio/about.html')
 
-def projects(request):
-    return render(request, 'portfolio/projects.html')
-
 def contact(request):
     return render(request, 'portfolio/contact.html')
 
@@ -29,8 +26,8 @@ def education(request):
 def experience(request):
     return render(request, 'portfolio/experience.html')
 
-def skills(request):
-    return render(request, 'portfolio/skills.html')
+def projects(request): 
+    return render(request, 'portfolio/projects.html') # 
 
 def hobbies(request):
     return render(request, 'portfolio/hobbies.html')
