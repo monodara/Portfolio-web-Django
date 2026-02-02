@@ -7,3 +7,4 @@ dj-database-url
 django-storages
 google-cloud-storage
 gunicorn
+whitenoise
