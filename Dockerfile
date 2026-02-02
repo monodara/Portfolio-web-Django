@@ -13,6 +13,7 @@ COPY . .
 
 # Environment variables
 ENV PYTHONUNBUFFERED=1
+ENV PORT=8080
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
