@@ -17,6 +17,25 @@
         margin-bottom: 1.5rem;
     }
 
+    .youtube-video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        /* 16:9 Aspect Ratio */
+        margin-bottom: 2rem;
+        background-color: #000;
+        /* Fallback background */
+    }
+
+    .youtube-video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
     .projects-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -30,7 +49,8 @@
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.2s;
-        height: 600px; /* Fixed height for the entire card */
+        height: 600px;
+        /* Fixed height for the entire card */
         display: flex;
         flex-direction: column;
     }
@@ -40,12 +60,15 @@
     }
 
     .project-card .carousel-item {
-        background-color: #f0f0f0; /* Background for letterboxing */
+        background-color: #f0f0f0;
+        /* Background for letterboxing */
     }
 
     .project-card .carousel-item img {
-        height: 220px; /* Fixed height for the image */
-        object-fit: contain; /* Show full image, no distortion */
+        height: 220px;
+        /* Fixed height for the image */
+        object-fit: contain;
+        /* Show full image, no distortion */
     }
 
     /* Custom styles for carousel controls */
@@ -59,6 +82,7 @@
         border-radius: 50%;
         margin: 0 10px;
     }
+
     .project-card .carousel-control-prev:hover,
     .project-card .carousel-control-next:hover {
         background-color: rgba(0, 0, 0, 0.5);
@@ -68,30 +92,38 @@
         padding: 1.5rem;
         display: flex;
         flex-direction: column;
-        flex-grow: 1; /* Allows this section to fill available space */
+        flex-grow: 1;
+        /* Allows this section to fill available space */
     }
-    
+
     .project-title {
-        color: #333; /* Explicitly set color */
+        color: #333;
+        /* Explicitly set color */
         font-size: 1.25rem;
         margin-bottom: 0.75rem;
     }
 
     .project-description {
-        height: 150px; /* Fixed height for description */
-        overflow-y: auto; /* Add scrollbar if content overflows */
+        height: 150px;
+        /* Fixed height for description */
+        overflow-y: auto;
+        /* Add scrollbar if content overflows */
         margin-bottom: 1rem;
+        color: #333; /* Set text color to dark for visibility */
     }
 
     .project-tech {
-        margin-top: auto; /* Pushes tech stack to the bottom */
+        margin-top: auto;
+        /* Pushes tech stack to the bottom */
         padding-top: 1rem;
         border-top: 1px solid #eee;
     }
 
     .tech-badges-container {
-        height: 60px; /* Fixed height for the badges area */
-        overflow-y: auto; /* Add scrollbar if content overflows */
+        height: 60px;
+        /* Fixed height for the badges area */
+        overflow-y: auto;
+        /* Add scrollbar if content overflows */
     }
 
     .tech-badge {
@@ -113,6 +145,14 @@
     {% for group in project_groups %}
     <section class="project-group">
         <h2>{{ group.name }}</h2>
+        {% if group.name == "Game" %}
+        <video controls preload="metadata" playsinline>
+            <source
+                src="https://github.com/monodara/brave-beaks-executable/releases/download/v1.0-demo/breakbeaks_demo.mp4"
+                type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        {% endif %}
         <div class="projects-grid">
             {% for project in group.projects.all %}
             <div class="project-card">
@@ -120,21 +160,26 @@
                 <div id="carousel-{{ project.id }}" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         {% for p_image in project.images.all %}
-                        <button type="button" data-bs-target="#carousel-{{ project.id }}" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
+                        <button type="button" data-bs-target="#carousel-{{ project.id }}"
+                            data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}"
+                            aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
                         {% endfor %}
                     </div>
                     <div class="carousel-inner">
                         {% for p_image in project.images.all %}
                         <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                            <img src="{{ p_image.image.url }}" class="d-block w-100" alt="Image for {{ project.title }}">
+                            <img src="{{ p_image.image.url }}" class="d-block w-100"
+                                alt="Image for {{ project.title }}">
                         </div>
                         {% endfor %}
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ project.id }}" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ project.id }}"
+                        data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ project.id }}" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ project.id }}"
+                        data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
@@ -144,9 +189,10 @@
                     <h4 class="project-title">
                         {{ project.title }}
                         {% if project.github_link %}
-                            <a href="{{ project.github_link }}" target="_blank" class="btn btn-outline-secondary btn-sm" title="GitHub Repository">
-                                <i class="fab fa-github"></i>
-                            </a>
+                        <a href="{{ project.github_link }}" target="_blank" class="btn btn-outline-secondary btn-sm"
+                            title="GitHub Repository">
+                            <i class="fab fa-github"></i>
+                        </a>
                         {% endif %}
                     </h4>
                     <div class="project-description">{{ project.description|safe }}</div>
