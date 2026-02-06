@@ -157,6 +157,7 @@ else:
     DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
     GS_BUCKET_NAME = os.getenv("GS_BUCKET_NAME", "your-bucket-name")
     GS_DEFAULT_ACL = "publicRead"
+    MEDIA_URL = f"https://storage.googleapis.com/{GS_BUCKET_NAME}/"
 
 CKEDITOR_5_CONFIGS = {
     'default': {
