@@ -29,6 +29,9 @@ def experience(request):
 from .models import ProjectGroup
 
 def projects(request): 
+    # Ensure 'Other' project group exists
+    other_group, created = ProjectGroup.objects.get_or_create(name="Other")
+
     project_groups = ProjectGroup.objects.prefetch_related(
         'projects__technologies', 
         'projects__images'
