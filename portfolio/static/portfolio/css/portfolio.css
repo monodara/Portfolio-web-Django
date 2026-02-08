@@ -4,6 +4,10 @@ body.dark-theme {
     color: #ffffff;
 }
 
+body.dark-theme main {
+    background-color: #121212; /* Ensure main content area is dark */
+}
+
 .hero-section {
     display: flex;
     align-items: center;
@@ -116,6 +120,7 @@ body.dark-theme {
     margin: 0;
     letter-spacing: 2px;
     animation: typing 3s steps(30, end), blink-caret 0.8s step-end infinite;
+    color: #ffffff !important; /* Explicitly set to white with !important */
 }
 
 .social-links {
@@ -441,7 +446,7 @@ body.dark-theme {
 .about-heading {
     font-size: 1.5rem;
     /* Make the heading smaller */
-    color: #ffffff;
+    color: #ffffff !important;
     /* Ensure it's visible in dark theme */
 }
 
